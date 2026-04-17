@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMLForm</title>
+</head>
+
+<body>
+    <!-- <form action="./action.php"> -->
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" placehoder="Enter your name">
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password">
+        <br>
+        <br>
+        <label for="employment">City of Employment</label>
+        <input type="test" id="employment">
+        <br>
+        <br>
+        <label for="server">Wev Server:</label>
+        <select name="dropdown" id="server">
+            <option value="Choose a server">Choose a server</option>
+            <option value="remote">Remote Server</option>
+            <option value="local">Local Server</option>
+        </select>
+        <br><br>
+        <p>Please specify your role:</p>
+        <input type="radio" name="role">
+        <label for="admin">Admin</label>
+        <br><br>
+        <input type="radio" id="enginner" name="role">
+        <label for="engineer">Engineer</label>
+        <br><br>
+        <input type="radio" id="manager" name="role">
+        <label for="manager">Manager</label>
+        <br><br>
+        <input type="radio" id="guest" name="role">
+        <label for="guest">Guest</label>
+        <br><br>
+        <p>Single Sign-on to the following:</p><br>
+        <input type="checkbox" id="mail" name="items">
+        <label for="mail">Mail</label><br>
+        <input type="checkbox" id="payroll">
+        <label for="payroll">Payroll</label><br>
+        <input type="checkbox" id="selfservice">
+        <label for="selfservice">Selfservice</label><br>
+        <button>Login</button><button>Reset</button>
+    </form>
+</body>
+
+</html>
