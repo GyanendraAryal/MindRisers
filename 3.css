@@ -1,0 +1,15 @@
+#highlight{
+    color: yellow;
+}
+#first{
+    font-size: 50px;
+    text-decoration: underline;
+}
+.is-active :hover{
+    text-decoration: none;
+    color: red;
+    text-decoration: underline;
+}
+header li{
+    list-style: none;
+}
