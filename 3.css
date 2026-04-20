@@ -13,3 +13,8 @@
 header li{
     list-style: none;
 }
+
+#heading2{
+    text-decoration: underline;
+    color: yellow;
+}
