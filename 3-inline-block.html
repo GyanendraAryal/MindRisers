@@ -7,18 +7,16 @@
     <title>Css</title>
     <style>
         .blog-post {
-            border: 1px solid gray;
+            border: 1px solid gray; 
+        }
+        .main-nav li{
+            display: inline;
+            margin: 0px 20px;
         }
     </style>
     <style>
-        .blog-post.featured{
-            background-color: yellow;
-        }
-
         /* place your styles here */
-        /* donot change your html. donot add even ids and class here. use the existing ones. */
     </style>
-    <link rel="stylesheet" href="5.1.css" />
 </head>
 
 <body>
@@ -31,6 +29,8 @@
         </ul>
     </header>
 
+    Research: inline element vs block elment
+
     <h1>John Doe</h1>
     <p>Hello, I am a <span>full stack developer.</span> I enjoy building websites and learning new programming
         languages.</p>
@@ -39,12 +39,9 @@
     <img src="https://placehold.co/600x300" alt="Profile Picture">
 
     <h2>Frameworks I Would Like to Learn</h2>
-    <div class="featured">
-        <h3>React</h3>
-        <p>React is a popular JavaScript library used to build fast and interactive user interfaces. I want to learn it
-            to
-            create modern web apps with reusable components and smooth user experiences.</p>
-    </div>
+    <h3>React</h3>
+    <p>React is a popular JavaScript library used to build fast and interactive user interfaces. I want to learn it to
+        create modern web apps with reusable components and smooth user experiences.</p>
 
     <h3>Express</h3>
     <p>Express is a minimal and flexible backend framework for Node.js. Learning Express will allow me to build APIs,
@@ -61,6 +58,8 @@
     <h3 id="css">CSS</h3>
     <p>CSS is used to style and design webpages. It controls colors, fonts, layouts, spacing, and makes websites
         visually appealing and responsive.</p>
+    <img src="https://placehold.co/400x300" alt="CSS programming languages ">
+    <img src="https://placehold.co/400x300" alt="CSS programming languages ">
     <img src="https://placehold.co/400x300" alt="CSS programming languages ">
 
 
@@ -131,27 +130,6 @@
             <h3>Understanding CSS Selectors</h3>
             <p>Published on: Jan 12, 2025</p>
             <ul class="tags">
-                <li><a href="#" class="featured">#React</a></li>
-                <li><a href="#">#JS</a></li>
-                <li><a href="#">#Css</a></li>
-                <li><a href="#">#Tailwind</a></li>
-                <li><a href="#">#Material-UI</a></li>
-            </ul>
-        </header>
-        <p>
-            CSS selectors allow us to target specific elements on a page.
-            From simple tag selectors to complex combinators, they form the
-            foundation of styling. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quidem omnis ullam
-            delectus rerum nam suscipit quod deserunt reprehenderit, iusto, dicta quos eos, odio laboriosam quasi
-            accusamus placeat? Itaque, nulla.
-        </p>
-    </div>
-    <br />
-    <div class="blog-post featured">
-        <header>
-            <h3>Understanding js Selectors</h3>
-            <p>Published on: Jan 12, 2025</p>
-            <ul class="tags">
                 <li><a href="#">#React</a></li>
                 <li><a href="#">#JS</a></li>
                 <li><a href="#">#Css</a></li>
@@ -167,9 +145,7 @@
             accusamus placeat? Itaque, nulla.
         </p>
     </div>
-
     <hr />
-
     <footer>
         <p>© 2025 John Doe</p>
         <div class="main-nav">
@@ -194,10 +170,15 @@
     <script>
         const steps = [
             {
-                element: `.blog-post.featured`,
-                message: `highlight this blog using existing given html css 
+                element:`header.main-nav`,
+                message:`We need the links side by side.
+                
+                NOTE: DONOT use flex. 
+
+                and there should be some spaces between them.
                 `
             },
+            
         ]
         const style = document.createElement('style');
         style.textContent = `

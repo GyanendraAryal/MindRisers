@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-size: inherit;
+            font-weight: inherit;
+        }
+
+        .main-div{
+            display: flex;
+            justify-content: center;
+            height: 90vh;
+            width: 50vw;
+            position: relative;
+            top: 25%;
+            left: 25%;
+            align-items: center;
+            background-color: #eaeff1;
+        }
+        .div {
+            display: flex;
+            flex-direction: column;
+            /* height: 390px; */
+            width: 300px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .divImg {
+            height: 200px;
+            width: 275px;
+            margin: 10px auto;
+            border-radius: 5px;
+        }
+
+        .btn {
+            display: inline;
+            height: 30px;
+            width: 70px;
+            border-radius: 20px;
+            outline: none;
+        }
+
+        .butns {
+            display: flex;
+            padding-left: 20px;
+            gap: 20px;
+        }
+
+        p {
+            padding-top: 10px;
+            padding-left: 20px;
+            font-size: larger;
+            font-weight: 500;
+        }
+        .p2{
+            font-size: 15px;
+            padding-top: 10px;
+            padding-left: 20px;
+        }
+        .readBtn{
+            width: 25%;
+            margin: 20px 103px;
+            border-radius: 15px;
+            background-color: #e0efff;
+            color: #5ba7ff;
+            padding: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-div">
+        <div class="div">
+        <img class="divImg" src="./html.jpg" alt="cardImage">
+        <div class="butns"><button class="btn">Nature</button><button class="btn">Lake</button></div>
+        <p>Lago Di Braies</p>
+        <p class="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur sint libero harum, accusantium
+            voluptatum nihil.</p>
+        <button class="readBtn">Read More</button>
+    </div>
+    </div>
+</body>
+
+</html>

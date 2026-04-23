@@ -11,14 +11,15 @@
         }
     </style>
     <style>
-        .blog-post.featured{
-            background-color: yellow;
-        }
-
         /* place your styles here */
-        /* donot change your html. donot add even ids and class here. use the existing ones. */
+        .html-img{
+            margin-right: 15px;
+        }
+        .blog-post{
+            padding: 15px;
+            margin-bottom: 15px;
+        }
     </style>
-    <link rel="stylesheet" href="5.1.css" />
 </head>
 
 <body>
@@ -39,12 +40,9 @@
     <img src="https://placehold.co/600x300" alt="Profile Picture">
 
     <h2>Frameworks I Would Like to Learn</h2>
-    <div class="featured">
-        <h3>React</h3>
-        <p>React is a popular JavaScript library used to build fast and interactive user interfaces. I want to learn it
-            to
-            create modern web apps with reusable components and smooth user experiences.</p>
-    </div>
+    <h3>React</h3>
+    <p>React is a popular JavaScript library used to build fast and interactive user interfaces. I want to learn it to
+        create modern web apps with reusable components and smooth user experiences.</p>
 
     <h3>Express</h3>
     <p>Express is a minimal and flexible backend framework for Node.js. Learning Express will allow me to build APIs,
@@ -55,7 +53,9 @@
     <h3 id="html">HTML</h3>
     <p>HTML is used to create the structure of a webpage. It defines elements like headings, paragraphs, links, and
         images that make up the content of a site.</p>
-    <img src="https://placehold.co/500x400" alt="HTML programming languages ">
+    <img class="html-img" src="https://placehold.co/200x200" alt="HTML programming languages ">
+    <img class="html-img" src="https://placehold.co/200x200" alt="HTML programming languages ">
+    <img class="html-img" src="https://placehold.co/200x200" alt="HTML programming languages ">
 
 
     <h3 id="css">CSS</h3>
@@ -68,30 +68,6 @@
     <p>JavaScript is used to make webpages interactive. It enables dynamic content, animations, form validation, and
         complex web applications.</p>
     <img src="https://placehold.co/200x200" alt="JavaScript programming languages ">
-
-
-    <h2>My Hobbies</h2>
-    <ul>
-        <li>Coding and building small projects</li>
-        <li>Reading tech blogs and books</li>
-        <li>Playing outdoor sports</li>
-        <li>Listening to music</li>
-        <li>Exploring new tools and technologies</li>
-    </ul>
-
-    <h2>Achievements</h2>
-    <ul>
-        <li>Completed multiple small web development projects</li>
-        <li>Built personal portfolio website</li>
-        <li>Consistently practicing coding to improve skills</li>
-    </ul>
-
-    <h2>My Goals</h2>
-    <ul>
-        <li>Become a <span>full-stack web developer</span></li>
-        <li>Create real-world applications</li>
-        <li>Learn modern frameworks and improve problem-solving skills</li>
-    </ul>
 
     <h2>My Plan to Achieve It</h2>
     <ul>
@@ -125,13 +101,12 @@
             aliquid fugit reprehenderit obcaecati fugiat doloremque, odit dolorum modi.
         </p>
     </div>
-    <br />
     <div class="blog-post">
         <header>
             <h3>Understanding CSS Selectors</h3>
             <p>Published on: Jan 12, 2025</p>
             <ul class="tags">
-                <li><a href="#" class="featured">#React</a></li>
+                <li><a href="#">#React</a></li>
                 <li><a href="#">#JS</a></li>
                 <li><a href="#">#Css</a></li>
                 <li><a href="#">#Tailwind</a></li>
@@ -146,10 +121,9 @@
             accusamus placeat? Itaque, nulla.
         </p>
     </div>
-    <br />
-    <div class="blog-post featured">
+    <div class="blog-post">
         <header>
-            <h3>Understanding js Selectors</h3>
+            <h3>Understanding Html </h3>
             <p>Published on: Jan 12, 2025</p>
             <ul class="tags">
                 <li><a href="#">#React</a></li>
@@ -161,6 +135,25 @@
         </header>
         <p>
             CSS selectors allow us to target specific elements on a page.
+            From simple tag selectors to complex combinators, they form the
+            foundation of styling. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quidem omnis ullam
+            delectus rerum nam suscipit quod deserunt reprehenderit, iusto, dicta quos eos, odio laboriosam quasi
+            accusamus placeat? Itaque, nulla.
+        </p>
+    </div>
+    <div class="blog-post">
+        <header>
+            <h3>Javascript 101 </h3>
+            <p>Published on: Jan 13, 2025</p>
+            <ul class="tags">
+                <li><a href="#">#React</a></li>
+                <li><a href="#">#JS</a></li>
+                <li><a href="#">#Node</a></li>
+                <li><a href="#">#Express</a></li>
+            </ul>
+        </header>
+        <p>
+            JAVASCRIPT allow us to target specific elements on a page.
             From simple tag selectors to complex combinators, they form the
             foundation of styling. Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita quidem omnis ullam
             delectus rerum nam suscipit quod deserunt reprehenderit, iusto, dicta quos eos, odio laboriosam quasi
@@ -194,8 +187,18 @@
     <script>
         const steps = [
             {
-                element: `.blog-post.featured`,
-                message: `highlight this blog using existing given html css 
+                element:`.blog-post`,
+                message:`the blogs are joined with each other. would be better if it had some spaces below.
+                `
+            },
+            {
+                element:`.blog-post`,
+                message:`also the text inside the boxes are in touch with border. would be better if it had some spaces.
+                `
+            },
+            {
+                element:`.html-img`,
+                message:`these images are sticked togehter, add some spaces between them.
                 `
             },
         ]
