@@ -26,6 +26,10 @@ ul {
     list-style: none;
     text-decoration: none;
 }
+.container{
+    max-width: 1024px;
+    z-index: 7;
+}
 
 nav {
     display: flex;
@@ -36,7 +40,7 @@ nav {
     font-size: small;
     width: 100%;
     height: 40px;
-    margin-top: 1rem;
+    /* margin-top: 1rem; */
     display: flex;
     background-color: rgb(88, 9, 225);
     color: white;
@@ -136,6 +140,39 @@ nav {
     padding-left: 3rem;
     width: auto;
 }
+.side-bar{
+    display: none;
+    flex-direction: column;
+    align-items: start;
+    position: absolute;
+    /* width: 200px; */
+    /* height: auto; */
+    transform: translateX(100%);
+    margin-right: 0;
+    /* padding-top: 5rem; */
+    /* background-color:rgba(29, 25, 25,0.5); */
+    border: 2px solid red;
+    z-index: 5;
+    top: 0;
+    right: 0;
+    bottom: 50%;
+}
+body{
+    background-color: rgb(66, 56, 56);
+}
+.side-bar ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    padding-top: 2rem;
+    gap:0;
+
+}
+.side-bar svg.menu-icon{
+    color: white;
+    position: absolute;
+}
 .box-one ul select{
     border: none;
     color: #FB2E86;
@@ -176,14 +213,19 @@ nav {
     display: none;
     justify-content: center;
     flex-direction: column;
-    transform: rotate(90deg);
+    /* transform: rotate(90deg); */
     align-items: center;
     height: 100%;
     width: 50px;
     font-size: 30px;
     /* border: 2px solid red; */
 }
-
+@media(min-width:1190px){
+    .container{
+        width: 100%;
+        margin: auto;
+    }
+}
 @media (max-width: 650px) {
     .item1 ul a {
         display: none;
@@ -253,6 +295,7 @@ nav {
         display: flex;
         flex-direction: column;
     }
+    
 }
 
 @media(max-width:303px) {
@@ -272,9 +315,9 @@ nav {
         padding: 0;
     }
 }
-@media(max-width:725px){
+@media(max-width:750px){
    .box-one{
-    display: none;
+    /* display: none; */
    } 
    .box-two{
     display:none;
@@ -287,4 +330,7 @@ nav {
     padding: 0 .5rem;
     justify-content: space-between;
    }
+   .side-bar{
+        display: flex;
+    }
 }
