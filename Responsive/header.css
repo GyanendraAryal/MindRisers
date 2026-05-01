@@ -15,6 +15,11 @@ h6 {
     font-size: inherit;
     font-weight: inherit;
 }
+header{
+    width: 100%;
+    height: 44px;
+    background-color: #7E33E0;
+}
 
 ul,
 a {
@@ -26,7 +31,8 @@ select {
     border: none;
     color: #FB2E86;
 }
-.first-nav select{
+
+.first-nav select {
     color: #F1F1F1;
     font-family: "Josefin Sans";
     font-size: 10px;
@@ -53,8 +59,9 @@ select {
     color: #F1F1F1;
     background-color: #7E33E0;
 }
+
 @media(min-width:640px) {
-    .first-nav{
+    .first-nav {
         display: flex;
         font-size: 12px;
         font-weight: 700;
@@ -63,22 +70,26 @@ select {
         flex-direction: row;
         justify-content: space-around;
     }
-    .div{
+
+    .div {
         padding-left: 1em;
         /* gap: 5rem; */
     }
-    .item1 .div .first-icon{
+
+    .item1 .div .first-icon {
         padding-right: 1rem;
         height: 1.5em;
         width: 2em;
     }
-    .item2 .div select{
+
+    .item2 .div select {
         font-size: 12px;
         font-weight: 700;
     }
 }
-@media(min-width:768px){
-    .first-nav{
+
+@media(min-width:768px) {
+    .first-nav {
         font-size: 16px;
         margin: auto;
         font-weight: 500;
@@ -86,7 +97,8 @@ select {
         flex-direction: row;
         justify-content: space-around;
     }
-    .item2 .div select{
+
+    .item2 .div select {
         font-size: 16px;
         font-weight: 700;
     }
@@ -112,30 +124,32 @@ select {
 
 .second-nav select {
     margin: 0;
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
 }
 
-.second-nav{
-  display: flex;
-  position: relative;
-  margin: auto;
-  justify-content: space-around;
-  align-items: center;
+.second-nav {
+    display: flex;
+    position: relative;
+    margin: auto;
+    padding: .5rem;
+    justify-content: space-around;
+    align-items: center;
 }
 
-.logo{
+.logo {
     font-family: "Josefin Sans";
     font-weight: 500;
     font-size: 20px;
 }
 
 /* Sidebar */
-.nav-items{
+.nav-items {
     padding-left: .5rem;
     font-family: "Lato";
     font-size: 12px;
 }
-.nav-items{
+
+.nav-items {
     position: fixed;
     width: 250px;
     height: 100%;
@@ -145,24 +159,27 @@ select {
     z-index: 8;
     transform: translateX(100%);
 }
-.active{
+
+.active {
     position: fixed;
     border: 2px;
     transition: all 2s;
     transform: translate(0);
-    background-color:#F1F1F1;
+    background-color: #F1F1F1;
     width: 30%;
     height: 100%;
     top: 0;
     right: 0;
-} 
-.bg-wrapper{
+}
+
+.bg-wrapper {
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     z-index: 1;
 }
-.search-bar{
+
+.search-bar {
     position: fixed;
     display: flex;
     height: 25px;
@@ -170,23 +187,147 @@ select {
     right: 0;
     transform: translateX(100%);
 }
-@media(min-width:640px){
-    .menu-icon1{
-        position: fixed;
-        top: 0;
-        right: 0;
-        /* height: 25px; */
-        transform: translateX(100%);
-    }
-    .menu-icon{
-        position: fixed;
-        top: 0;
-        right: 0;
-        transform: translateX(100%);
-    }
-    /* .main-nav{
+
+@media(min-width:640px) {
+    .second-nav {
         display: flex;
-        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-top: .5rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding-left: 2rem; */
+        gap: 2rem;
+    }
+
+    .nav-items {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background-color: #ffff;
+        /* z-index: 0; */
         transform: translateX(0);
-    } */
+    }
+
+    .menu-icon1 {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    .menu-icon {
+        display: none;
+        font-size: 16px;
+    }
+
+    .search-bar {
+        position: relative;
+        padding-left: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        width: 150px;
+        height: 15px;
+        right: 0;
+        transform: translateX(0);
+    }
+    .search-bar input{
+        width: 100%;
+    }
+    .search-bar .second-icon{
+        position: absolute;
+        top: 10px;
+        background-color: #FB2E86;
+        right: 0;
+        height: 1.1rem;
+        color: #ffff;
+        font-size: larger;
+        width: 1.111rem;
+        transform: translateY(-50%);
+    }
+    .second-nav select {
+    margin: 0;
+    background-color: #ffff;
+}
+}
+
+/* For Min-Width of 1024px */
+@media(min-width:1024px){
+      .second-nav {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 3rem;
+        padding-right: 3rem;
+        padding-top: .5rem;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .main-nav {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* padding-left: 2rem; */
+        gap: 2rem;
+    }
+
+    .nav-items {
+        position: static;
+        width: auto;
+        height: auto;
+        padding: 0;
+        background-color: #ffff;
+        /* z-index: 0; */
+        transform: translateX(0);
+    }
+
+    .menu-icon1 {
+        position: fixed;
+        top: 0;
+        right: 0;
+        transform: translateX(100%);
+    }
+
+    .menu-icon {
+        display: none;
+        font-size: 16px;
+    }
+
+    .search-bar {
+        position: relative;
+        padding-left: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        width: 317px;
+        height: 15px;
+        right: 0;
+        transform: translateX(0);
+    }
+    .search-bar input{
+        width: 100%;
+    }
+    .search-bar .second-icon{
+        position: absolute;
+        top: 10px;
+        background-color: #FB2E86;
+        right: 0;
+        height: 1.1rem;
+        color: #ffff;
+        font-size: larger;
+        width: 1.111rem;
+        transform: translateY(-50%);
+    }
+    .second-nav select {
+    margin: 0;
+    background-color: #ffff;
+}
+
 }
