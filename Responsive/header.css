@@ -157,13 +157,14 @@ select {
     right: 0;
     background-color: #F1F1F1;
     z-index: 8;
+    transition: all .5s;
     transform: translateX(100%);
 }
 
 .active {
     position: fixed;
     border: 2px;
-    transition: all 2s;
+    transition: all 1s;
     transform: translate(0);
     background-color: #F1F1F1;
     width: 30%;
