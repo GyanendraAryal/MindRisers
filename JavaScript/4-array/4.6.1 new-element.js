@@ -9,9 +9,9 @@ console.log("Before: ",courses);
 // TODO: what if we want to add two more courses here.  devops and  data-science here along with their details
 // CODE here
 
-
 // courses[3] =  {title:"devop",price:3234}
 // courses[4] =  {title:"data-scient",price:3234}
+
 courses.push({title:"devop",price:3234},{title:"data-scient",price:3234})
 
 console.log("after",courses); 
