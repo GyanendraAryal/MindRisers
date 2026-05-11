@@ -125,3 +125,7 @@ const course = {
         },
     },
 }
+
+// for (keys in course){
+//     console.log(keys);
+// }
