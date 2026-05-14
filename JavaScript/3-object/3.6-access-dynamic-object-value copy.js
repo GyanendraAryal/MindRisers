@@ -8,7 +8,6 @@ let person = {
 }
 
 let fieldToRetrive = 'website'
-
 /* 
     using  fieldToRetrive variable, access the value of person object
         if fieldToRetrive is first_name, OUTPUT  should be john
