@@ -9,7 +9,6 @@ colorNames[3] = "green"
 console.log(colorNames);
 
 
-
 // similarly 
 
 let students = [

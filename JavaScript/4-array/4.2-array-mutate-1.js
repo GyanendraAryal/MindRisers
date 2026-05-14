@@ -24,7 +24,3 @@ brands[1] = "sony"
 
 
 console.log("in second element , we have",brands[1]) //  output should be : in second element , we have sony
-
-
-
-
