@@ -4,28 +4,10 @@
 // > Est. Time: 60–90 minutes
 
 
-
-
-
-// ## Problem 5 — HOF: Build Your Own Filter
-// Implement `myFilter(arr, fn)` from scratch — do NOT use `.filter()`.
-
-// ```js
-// // Your code here
-
-
-// // Test cases:
-// console.log(JSON.stringify(myFilter([1,2,3,4,5], x => x % 2 === 0)) === "[2,4]");
-// console.log(JSON.stringify(myFilter(["cat","dog","cow"], s => s.startsWith("c"))) === '["cat","cow"]');
-// ```
-
-// ---
-
 // ## Problem 6 — HOF: Build Your Own Reduce
 // Implement `myReduce(arr, fn, initialValue)` from scratch.
 
-// ```js
-// // Your code here
+// Your code here
 
 
 // // Test cases:
@@ -217,3 +199,20 @@ const myMap = (array,fn) =>{
 console.log(JSON.stringify(myMap([1,2,3,4],x => x * 2))==="[2,4,6,8]");
 console.log(JSON.stringify(myMap(["a","b","c"], s => s.toUpperCase())) === ["A","B","C"]    );
 
+
+// ## Problem 5 — HOF: Build Your Own Filter
+// Implement `myFilter(arr, fn)` from scratch — do NOT use `.filter()`.
+
+// // Your code here
+  
+
+// // Test cases:
+// console.log(JSON.stringify(myFilter([1,2,3,4,5], x => x % 2 === 0)) === "[2,4]");
+// console.log(JSON.stringify(myFilter(["cat","dog","cow"], s => s.startsWith("c"))) === '["cat","cow"]');
+
+function sum(a,b,c){
+  console.log(a+b);
+}
+
+sum(5,5
+)
