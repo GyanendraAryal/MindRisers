@@ -36,6 +36,8 @@
 //     return a + b
 // }
 // console.log(sum(5,5));
+
+
 const sum =(...array)=>{
     return array.reduce((sum,next)=>{
         return sum + next
