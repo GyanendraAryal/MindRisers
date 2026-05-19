@@ -22,12 +22,16 @@ let students = [
   }
 ];
 
-function userDetail(arr){
-  arr.forEach(element => {
-    console.log(`${element.name} scored gpa ${element.scores[0].gpa} in ${element.scores[0].exam} and ${element.scores[1].gpa} in ${element.scores[1].exam}`);
-  });
+function userDetail(indx) {
+  // arr.forEach(element => {
+  //   console.log(`${element.name} scored gpa ${element.scores[0].gpa} in ${element.scores[0].exam} and ${element.scores[1].gpa} in ${element.scores[1].exam}`);
+  // });
+  console.log(`${students[indx].name} scored gpa ${students[indx].scores[0].gpa} in ${students[indx].scores[0].exam} and ${students[indx].scores[1].gpa} in ${students[indx].scores[1].exam}`);
+
 }
-userDetail(students)
+userDetail(0)
+userDetail(1)
+userDetail(2)
 
 /*  
     using functon, achieve the following

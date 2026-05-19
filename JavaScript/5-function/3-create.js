@@ -17,16 +17,11 @@
 
 let users = [];
 let count = users.length
-// console.log(count);
 
-// let count = 0
 function addNewUser(name, age, address) {
     // users[users.length] = { name, age, address, }
     users[count] = { name, age, address, }
-    
-    // return count = users.length
-    // console.log(count);
-    return count = users.length
+    count = users.length
 }
 // console.log(count);
 

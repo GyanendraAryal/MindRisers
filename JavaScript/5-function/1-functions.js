@@ -42,4 +42,3 @@ users.forEach((index)=>{
     console.log(`Name is ${index.firstName} and age is ${index.age}`);
     // `Name is ${index.firstName} and age is ${index.age}`
 })
-
