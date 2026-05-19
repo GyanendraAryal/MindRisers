@@ -18,7 +18,6 @@ function checkAdminAccess(user) {
     }
 }
 checkAdminAccess(user_2)
-
 /*  
     TODO: create a function checkAdminAccess and pass the user as arguement to it
 
@@ -30,24 +29,3 @@ checkAdminAccess(user_2)
 */
 
 
-/* 
-    EXPECTED-OUTPUT on console.log(users)
-    [
-        {
-            name:"Ram",
-            percentage:98,
-            grade:A
-        },
-        {
-            name:"john",
-            percentage:65,
-            grade:D
-        },
-        {
-            name:"sita",
-            percentage:80,
-            grade:B
-        },
-    ]
-    
-*/

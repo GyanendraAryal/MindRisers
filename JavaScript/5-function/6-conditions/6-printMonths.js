@@ -1,5 +1,3 @@
-
-
 /* 
 
 create a function  getMonthName  to get the name of different months. 
