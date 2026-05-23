@@ -14,7 +14,7 @@ let users = [
 ];
 
 users.forEach((item) => {
-  console.log(`${item.name} is studying ${item.subjects}`);
+  console.log(`${item.name} is studying ${item.subjects.join(' ')}`);
 })
 
 /* 

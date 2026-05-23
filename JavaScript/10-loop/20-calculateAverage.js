@@ -9,12 +9,21 @@ calculateAverage([1, 2, 3]) ➞ 2
 calculateAverage([5]) ➞ 5
 */
 
+// function calculateAverage(arr) {
+//     // your code here
+//     arr.reduce((acc, next) => {
+//         return sum = acc += next
+//     }, 0);
+//     return sum / arr.length
+// }
 function calculateAverage(arr) {
-    // your code here
-    arr.reduce((acc, next) => {
-        return sum = acc += next
-    }, 0);
-    return sum / arr.length
+    //  your code here
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        sum = sum + arr[i];
+    }
+    return sum
+
 }
 
 console.log(calculateAverage(numbers));

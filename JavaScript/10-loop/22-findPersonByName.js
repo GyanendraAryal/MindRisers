@@ -12,9 +12,21 @@ findPersonByName(people, "Sita") ➞ { name: "Sita", age: 22 }
 findPersonByName(people, "Hari") ➞ { name: "Hari", age: 30 }
 */
 
+// function findPersonByName(peopleArray, name) {
+//     // your code here
+//     return peopleArray.filter((people) => name === people.name)
+// }
+
+// console.log(findPersonByName(people, "Sita"));
+
 function findPersonByName(peopleArray, name) {
     // your code here
-    return peopleArray.filter((people) => name === people.name)
+    for (let i = 0; i < peopleArray.length; i++) {
+        if (peopleArray[i].name === name) {
+            return peopleArray[i]
+        }
+    }
+    return 'User not found'
 }
-
-console.log(findPersonByName(people, "Sita"));
+// findPersonByName(people, "Sita")
+console.log("User is: ", findPersonByName(people, "Sita"));
