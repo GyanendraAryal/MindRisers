@@ -50,6 +50,13 @@ let dashboard = {
 
 
 
+
+// function enToNepali(obj) {
+//     obj.forEach(element => {
+//         console.log(element.total.toString().split('').map((digit) => nepali_digits[digit]).join(''))
+//     });
+// }
+
 function enToNepali() {
     for (const items in dashboard) {
         //    console.log(items);
@@ -57,7 +64,6 @@ function enToNepali() {
         dashboard[items] = dashboard[items].toString().split('').map((digit) => nepali_digits[digit]).join('')
     }
 }
-
 enToNepali()
 console.log(dashboard);
 // console.log(enToNepali());
