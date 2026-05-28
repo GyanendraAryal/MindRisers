@@ -68,3 +68,8 @@ enToNepali()
 console.log(dashboard);
 // console.log(enToNepali());
 
+
+// (() => {
+//     console.log("one");
+    
+// })();
