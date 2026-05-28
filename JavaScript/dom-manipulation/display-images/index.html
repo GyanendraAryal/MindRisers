@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <pre>
+        development url: https://mindrises-development.vercel.app
+        production url: https://https://mindrisers.com.np
+    </pre>
+    <hr>
+    <pre>
+        <div style="height: 200px; width: 200px; display: flex; gap: 1rem; align-items: center; flex-direction: column; justify-content: center; border: 2px solid black;" class="image-container">
+            <span id="title" ></span>
+        </div>
+    </pre>
+
+
+    <script>
+        let blogs = [
+            {
+                title: 'Landing Page',
+                image: 'https://www.mindrisers.com.np/_next/static/media/bannerModel.b6917771.svg'
+
+            },
+            // {
+            //     title: 'Dom Tree',
+            //     image: 'https://share.google/YqwNXro2a2e2tVYNb'
+            // },
+            // {
+            //     title: 'Graphic Designing Training in Putalisadak, Kathmandu | Mindrisers',
+            //     image: '/static/Images/blog/single_post/Graphic_Designing_Training_in_Putalisadak_Kathmandu__Mindrisers.png'
+            // },
+            // {
+            //     title: 'Data Science with Python Training in Putalisadak, Kathmandu | Mindrisers',
+            //     image: '/static/Images/blog/single_post/Data_Science_with_Python_Training_in_Putalisadak_Kathmandu.jpg'
+            // },
+            // {
+            //     title: 'UI/UX Training in Putalisadak, Kathmandu | Mindrisers',
+            //     image: '/static/Images/blog/single_post/UIUX_Training_in_Putalisadak_Kathmandu__Mindrisers.png'
+            // },
+            // {
+            //     title: 'Flutter Training in Putalisadak, Kathmandu | Mindrisers',
+            //     image: '/static/Images/blog/single_post/Flutter_Training_in_Putalisadak_Kathmandu_Mindrisers.png'
+            // },
+            // {
+            //     title: 'DevOps Training in Putalisadak, Kathmandu | Mindrisers',
+            //     image: '/static/Images/blog/single_post/DevOps_Training_in_Putalisadak_Kathmandu__Mindrisers.png'
+            // }
+        ]
+
+
+        let courses = [
+            {
+                title: 'MERN Stack Training in Nepal',
+                image: '/static/Images/courses/banner/mern-banner-min_nplbrgN.jpg'
+            },
+            {
+                title: 'Python with Django Training in Nepal',
+                image: '/static/Images/courses/banner/python-banner-min_7hCoIdR.jpg'
+            },
+            {
+                title: 'Digital Marketing Training in Nepal',
+                image: '/static/Images/courses/banner/DIGITAL-MARKETING-banner-min_JBHENk4.webp'
+            },
+            {
+                title: 'Quality Assurance Training in Nepal',
+                image: '/static/Images/courses/banner/qa-banner-min_l0DzbAP.jpg'
+            },
+            {
+                title: 'Graphic Design Training in Nepal',
+                image: '/static/Images/courses/banner/banner11-min_6ANDad7.png'
+            },
+            {
+                title: 'Flutter Training in Nepal',
+                image: '/static/Images/courses/banner/flutter-banner-min_DUDTPdH.jpg'
+            },
+            {
+                title: 'DevOps Training in Nepal',
+                image: '/static/Images/courses/banner/DevOps_Training.png'
+            }
+        ]
+        const text = document.querySelector("#title")
+        const imageContainer = document.querySelector(".image-container")
+        blogs.forEach((item) => {
+            // Creating Element
+            const image = document.createElement("img")
+            image.setAttribute("src", item.image)
+            image.setAttribute("alt", item.title)
+            image.style.height= "150px"
+            image.style.width= "150px"
+
+            // Appending Child
+            imageContainer.appendChild(image)
+
+            // Creating Element
+            const spanText = document.createElement("span")
+            spanText.innerHTML = item.title
+
+            imageContainer.prepend(spanText)
+
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>

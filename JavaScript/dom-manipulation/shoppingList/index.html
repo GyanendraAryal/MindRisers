@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Todo</h3>
+
+    <hr>
+    <pre>
+            create a form 
+            - input field for item
+            - input field for quantity // should be numerical 
+            - add button
+        </pre>
+    </hr>
+
+    <pre>
+        on click of add button , the items should be displayed one after another along with their quantities.
+        create a function that receives input fields values
+
+
+        HINT:
+            - createElement https://www.javascripttutorial.net/dom/manipulating/create-a-dom-element/
+
+                - appendChild https://www.w3schools.com/jsref/met_node_appendchild.asp
+                or
+                - innerHTML https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+            - removeChild
+                - https://www.w3schools.com/jsref/met_node_removechild.asp
+                - https://www.w3schools.com/jsref/met_element_remove.asp
+
+    </pre>
+
+    <pre>
+        first acheive the above 
+        then 
+        on page refresh the added shopping list gets deleted, prevent that. 
+    </pre>
+
+    <form onsubmit="addItem(event)">
+        <input id="item-quantity" type="number" placeholder="quanity">
+        <input id="item-name" type="text" placeholder="item">
+        <input type="submit">
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>quantity</th>
+            </tr>
+        </thead>
+        <tbody id="item-body">
+            <tr>
+                <td>apple</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>samsung</td>
+                <td>9</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+        const addItem = (e) => {
+            e.preventDefault()
+            const body = document.querySelector("#item-body")
+            let itemQuantity = Number(document.querySelector("#item-quantity").value);
+            let itemName = document.querySelector("#item-name").value;
+
+            const tr = document.createElement("tr")
+            tr.innerHTML = `
+                <td>${itemName}<td/>
+                <td>${itemQuantity}<td/>
+            `;
+            body.innerHTML = ''
+            body.append(tr)
+        }
+    </script>
+</body>
+
+</html>
