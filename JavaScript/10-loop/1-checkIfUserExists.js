@@ -88,9 +88,8 @@ OUTPUT:
 //         if (element.email === userEmail && element.password === userPassword) {
 //             console.log("Login verified for: ", userEmail, userPassword);
 //         }
-//         else {
-//         }
 //     })
+    // console.log("Invalid Credentials")
 // }
 //For-Each is not good for searching element
 
@@ -116,7 +115,6 @@ function loginUser(userEmail, userPassword) {
     }
     else {
         console.log("Login unsucessful for this Invalid User");
-
     }
 }
 
