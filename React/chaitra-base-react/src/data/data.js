@@ -48,36 +48,7 @@ let courses = [
 ];
 
 let blogs = [
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
-  {
-    title: "Web Designing Training in Putalisadak, Kathmandu",
-    image:
-      "/static/Images/blog/single_post/Web_Designing_Training_in_Putalisadak_Kathmandu.jpg",
-  },
+  
   {
     title: "Web Designing Training in Putalisadak, Kathmandu",
     image:
