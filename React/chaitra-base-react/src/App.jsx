@@ -6,6 +6,8 @@ import { data } from './data/data'
 import Counter from './components/Counter'
 import ChangeTheme from './components/ChangeTheme'
 import GoogleTabs from './components/GoogleTabs'
+import TodosCrud from './components/TodosCrud'
+
 const { courses } = data
 function App() {
   return (
@@ -32,7 +34,9 @@ function App() {
       {/* <Todo /> */}
       {/* <Counter/>  */}
       {/* <ChangeTheme /> */}
-      <GoogleTabs/>
+      {/* <GoogleTabs/> */}
+
+      <TodosCrud/>
     </>
   )
 }
