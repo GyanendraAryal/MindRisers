@@ -4,6 +4,8 @@ import Blogs from './components/Blogs'
 import Todo from './components/Todo'
 import { data } from './data/data'
 import Counter from './components/Counter'
+import ChangeTheme from './components/ChangeTheme'
+import GoogleTabs from './components/GoogleTabs'
 const { courses } = data
 function App() {
   return (
@@ -28,7 +30,9 @@ function App() {
       </div> */}
       {/* <Blogs />
       {/* <Todo /> */}
-      <Counter/> 
+      {/* <Counter/>  */}
+      {/* <ChangeTheme /> */}
+      <GoogleTabs/>
     </>
   )
 }
