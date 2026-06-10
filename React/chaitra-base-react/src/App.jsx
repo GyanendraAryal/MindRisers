@@ -7,6 +7,7 @@ import Counter from './components/Counter'
 import ChangeTheme from './components/ChangeTheme'
 import GoogleTabs from './components/GoogleTabs'
 import TodosCrud from './components/TodosCrud'
+import TodosCrudModal from './components/TodosCrudModal'
 
 const { courses } = data
 function App() {
@@ -35,8 +36,9 @@ function App() {
       {/* <Counter/>  */}
       {/* <ChangeTheme /> */}
       {/* <GoogleTabs/> */}
+      {/* <TodosCrud/> */}
+      <TodosCrudModal />
 
-      <TodosCrud/>
     </>
   )
 }
