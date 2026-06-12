@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Button({ size, rounded:rounded, label, ...rest }) {
+function Button({ size, setOpen, rounded:rounded, label, ...rest }) {
     let className;
     if (size == "small") {
         className = `cursor-pointer rounded-${rounded} border  px-2 py-0.2 m-1`
@@ -12,7 +12,7 @@ function Button({ size, rounded:rounded, label, ...rest }) {
     return (
         <>
             <button onClick={() => {
-                console.log('clicked');
+                setOpen((prev)=> !prev)
                 
             }} className={className}>{label}</button >
         </>
