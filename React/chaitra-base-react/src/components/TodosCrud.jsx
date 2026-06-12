@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Button from './Button'
-import { useEffect } from 'react'
+import ModalTodo from './ModalTodo'
 
 function TodosCrud() {
 
@@ -62,8 +62,11 @@ function TodosCrud() {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form
+        className='flex rounded justify-center py-2 h-14 w-[50%] m-auto bg-green-200 px-2'
+        onSubmit={handleSubmit}>
         <input
+          placeholder='Add your todo...'
           value={input}
           onChange={(e) => setInput(e.target.value)}
           className='border' />
@@ -74,18 +77,11 @@ function TodosCrud() {
       {todos.map((items) => (
         <div
           key={items.id}
-          className='w-150 mt-2 flex items-center justify-between bg-amber-200'
+          className='w-150 mt-2 m-auto flex items-center justify-between bg-amber-200'
         >
           {editId == items.id ? (
             <>
-              <input
-                className='border h-5 bg-white w-40'
-                value={editText}
-                onChange={(e) => setEditText(e.target.value)}
-              />
-              <button
-                onClick={() => handleSave(items.id)}
-                className='h-6 cursor-pointer w-14 border bg-amber-500'>Save</button>
+              <ModalTodo editText={ editText } handleChecked={handleChecked } handleSave={handleSave} setEditText={setEditText} items={items} />
             </>
           ) : (
             <>
@@ -118,3 +114,22 @@ export default TodosCrud
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+// <input
+//                 className='border h-5 bg-white w-40'
+//                 value={editText}
+//                 onChange={(e) => setEditText(e.target.value)}
+//               />
+//               <button
+//                 onClick={() => handleSave(items.id)}
+//                 className='h-6 cursor-pointer w-14 border bg-amber-500'>Save</button>

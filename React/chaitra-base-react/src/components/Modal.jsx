@@ -6,7 +6,6 @@ function Modal({ value, id, setEditText, handleSave, onClose }) {
         <div className='fixed inset-0 z-50 bg-black/50 flex justify-center items-center'>
             <div className='h-50 rounded-xl w-3/4 bg-amber-300 p-4 relative'>
                 
-                {/* FIX: Wired the click handler directly to close the modal up in the parent tree */}
                 <div className='absolute top-2 right-2'>
                     <Button 
                         onClick={onClose} 
