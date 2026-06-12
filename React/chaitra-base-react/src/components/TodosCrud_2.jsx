@@ -1,0 +1,187 @@
+import React, { useState } from "react";
+import { todos } from "./data/todos";
+// import Button from "./components/ui/Button";
+import { ToastContainer, toast } from "react-toastify";
+
+function TodosCrud() {
+  // let todos = ["html", "css", "js", "react", "express"];
+
+  const [editIndex, setEditIndex] = useState(null);
+  const [title, setTitle] = useState("");
+  // const [todos, setTodos] = useState(["html", "css", "js"]);
+
+  const [todos, setTodos] = useState([
+    {
+      title: "html",
+      completed: true,
+    },
+    {
+      title: "css",
+      completed: true,
+    },
+    {
+      title: "js",
+      completed: true,
+    },
+    {
+      title: "react",
+      completed: false,
+    },
+  ]);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!title || !title.trim()) {
+      toast.error("title is required", {
+        position: "bottom-center",
+        theme: "colored",
+      });
+      return;
+    }
+
+    // todos.push(e.target.title.value); //ERROR : state variable should changed directly
+    // let oldTodos = todos; // ERROR: array is poiting to the reference of original todos array
+    // oldTodos.push(e.target.title.value); // error:
+
+    if (editIndex == null) {
+      let oldTodos = [...todos]; // [{},{}]
+      oldTodos.push({ title: e.target.title.value, completed: false }); // [{},{},"express"]
+      // console.log(oldTodos);
+      // setTodos(["html", "css", "js", "database"]);
+      setTodos(oldTodos);
+      clear();
+      // e.target.title.value = "";
+    } else {
+      let oldTodos = [...todos];
+      oldTodos[editIndex] = {
+        title: title,
+        completed: e.target.status_check.checked,
+      };
+
+      setTodos(oldTodos);
+      clear();
+    }
+  };
+
+  const clear = () => {
+    setTitle("");
+    setEditIndex(null);
+  };
+
+  const deleteTodo = (indexToDelete) => {
+    // let oldTodos = [...todos]
+    // oldTodos.splice(indexToDelete, 1);
+    // setTodos(oldTodos);
+
+    setTodos(todos.filter((el, index) => index !== indexToDelete));
+  };
+
+  const toggleStauts = (index) => {
+    let oldTodos = [...todos];
+
+    oldTodos[index] = {
+      title: todos[index].title,
+      completed: !todos[index].completed,
+    };
+
+    setTodos(oldTodos);
+  };
+
+  console.log("render | re-render");
+
+  return (
+    <div style={{ marginLeft: "2rem" }}>
+      <form onSubmit={handleSubmit}>
+        <input
+          required
+          value={title}
+          id="title"
+          name="title"
+          onChange={(e) => {
+            setTitle(e.target.value);
+          }}
+        />
+
+        <button>{editIndex === null ? "add" : "edit"}</button>
+        {title && <button onClick={clear}>clear</button>}
+      </form>
+      <ul style={{ listStyle: "none" }}>
+        {todos.map((el, index) => (
+          <li key={index}>
+            <input
+              type="checkbox"
+              checked={el.completed}
+              onChange={(e) => {
+                toggleStauts(index);
+              }}
+            />
+            <span
+              style={{ textDecoration: el.completed ? "line-through" : "" }}
+            >
+              {el.title}
+            </span>
+            <button
+              onClick={() => {
+                deleteTodo(index);
+              }}
+            >
+              delete
+            </button>
+            <button
+              onClick={() => {
+                // editTodo(index);
+                setTitle(el.title);
+                setEditIndex(index);
+              }}
+            >
+              edit
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      {editIndex !== null && (
+        <>
+          <div className="backdrop" onClick={clear}></div>
+          <div className="modal" style={{ border: "1px solid" }}>
+            <p>Edit Todos</p>
+            <button className="close" onClick={clear}>
+              x
+            </button>
+            <form onSubmit={handleSubmit}>
+              <input
+                required
+                value={title}
+                id="title"
+                name="title"
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+              />
+              <br />
+              <br />
+              <input
+                type="checkbox"
+                name="status_check"
+                id="status-check"
+                // checked={todos[editIndex].completed}
+                defaultChecked={todos[editIndex].completed}
+                // onChange={() => {}}
+              />
+              <label htmlFor="status-check"> Mark as completed</label>
+              <br />
+              <br />
+              <button>{editIndex === null ? "add" : "edit"}</button>
+              {title && <button onClick={clear}>clear</button>}
+            </form>
+          </div>
+        </>
+      )}
+
+      <ToastContainer />
+    </div>
+  );
+}
+
+export default TodosCrud;
