@@ -9,8 +9,9 @@ import GoogleTabs from './components/GoogleTabs'
 import TodosCrud from './components/TodosCrud'
 import TodosCrudModal from './components/TodosCrudModal'
 import Modal from './components/Modal'
-import ReactForm from './components/ReactForm'
+import ReactForm from './components/Reacthookform'
 import ModalTodo from './components/ModalTodo'
+import Reactform from './components/Reacthookform'
 
 const { courses } = data
 function App() {
@@ -40,10 +41,11 @@ function App() {
       {/* <ChangeTheme /> */}
       {/* <GoogleTabs/> */}
       {/* <Modal/> */}
-      {/* <ReactForm/> */}
       {/* <TodosCrudModal /> */}
+      {/* <ReactForm/> */}
         {/* <ModalTodo/> */}
-      <TodosCrud/>
+      {/* <Reactform/> */}
+      <TodosCrud />
     </>
   )
 }
