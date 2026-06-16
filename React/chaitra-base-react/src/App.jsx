@@ -12,6 +12,7 @@ import Modal from './components/Modal'
 import ReactForm from './components/Reacthookform'
 import ModalTodo from './components/ModalTodo'
 import Reactform from './components/Reacthookform'
+import ProductsListApi from './components/ProductsListApi'
 
 const { courses } = data
 function App() {
@@ -45,7 +46,8 @@ function App() {
       {/* <ReactForm/> */}
         {/* <ModalTodo/> */}
       {/* <Reactform/> */}
-      <TodosCrud />
+      {/* <TodosCrud /> */}
+      <ProductsListApi/>
     </>
   )
 }
