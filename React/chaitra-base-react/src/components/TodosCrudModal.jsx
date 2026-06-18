@@ -6,12 +6,13 @@ function TodosCrudModal() {
   const [editId, setEditId] = useState(null)
   const [editText, setEditText] = useState('')
   const [input, setInput] = useState('')
-  
+
   const [todos, setTodos] = useState(() => {
-    const todos = localStorage.getItem('todos')
-    return todos ? JSON.parse(todos) : []
+    const res = localStorage.getItem('todos')
+    return res ? JSON.parse(res) : []
   })
 
+  //Saving in localstorage
   useEffect(() => {
     localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
@@ -20,7 +21,7 @@ function TodosCrudModal() {
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!input.trim()) return
-    
+
     const newTodo = {
       id: Date.now(),
       title: input.trim(),
@@ -64,12 +65,12 @@ function TodosCrudModal() {
           value={input}
           required
           onChange={(e) => setInput(e.target.value)}
-          className='border' 
+          className='border'
         />
         <Button type='submit' size='small' label='Add' />
       </form>
 
-      {todos.map((item) => ( 
+      {todos.map((item) => (
         <div
           key={item.id}
           className='w-150 mt-2 flex items-center justify-between bg-amber-200'
@@ -78,7 +79,7 @@ function TodosCrudModal() {
             <input
               checked={item.isChecked}
               onChange={() => handleChecked(item.id)}
-              type="checkbox" 
+              type="checkbox"
             />
             <li className={`list-none text-2xl ${item.isChecked ? 'line-through bg-gray-400' : ''}`}>
               {item.title}
