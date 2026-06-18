@@ -8,7 +8,7 @@ export default function ProductsListApi() {
     // const [item, setItem] = useState("")
     const [searchInput, setSearchInput] = useState("")
     const [perPage, setPerPage] = useState(30)
-
+    
     useEffect(() => {
         axios.get(`https://dummyjson.com/products/search?q=${searchInput}&limit=${perPage}`)
             .then((res) => {
