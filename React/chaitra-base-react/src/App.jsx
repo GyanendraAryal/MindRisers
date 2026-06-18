@@ -13,6 +13,9 @@ import ReactForm from './components/Reacthookform'
 import ModalTodo from './components/ModalTodo'
 import Reactform from './components/Reacthookform'
 import ProductsListApi from './components/ProductsListApi'
+import OwnTodo from './pages/OwnTodo'
+
+
 
 const { courses } = data
 function App() {
@@ -47,7 +50,8 @@ function App() {
         {/* <ModalTodo/> */}
       {/* <Reactform/> */}
       {/* <TodosCrud /> */}
-      <ProductsListApi/>
+      {/* <ProductsListApi/> */}
+      <OwnTodo/>
     </>
   )
 }
