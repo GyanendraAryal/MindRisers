@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import ModalTodo from '../components/ModalTodo'
 import axios from 'axios'
-import { use } from 'react'
 
 export default function OwnTodo() {
     const [todos, setTodos] = useState([])
@@ -9,20 +8,23 @@ export default function OwnTodo() {
     const [editId, setEditId] = useState(null)
     const [editText, setEditText] = useState('')
     const [openModal, setOpenModal] = useState(false)
+    const [selectedTodo, setSelectedTodo] = useState(null)
+
+
+    const fetchTodo = async () => {
+        try {
+            await axios.get('http://localhost:3000/api/todo')
+                .then((res) => {
+                    setTodos(res.data)
+                    console.log(res.data)
+                })
+            // console.log(res);
+        } catch (error) {
+            console.log("Couldn't connect to api: ", error);
+        }
+    }
 
     useEffect(() => {
-        const fetchTodo = async () => {
-            try {
-                await axios.get('http://localhost:3000/api/todo')
-                    .then((res) => {
-                        setTodos(res.data)
-                        console.log(res.data)
-                    })
-                // console.log(res);
-            } catch (error) {
-                console.log("Couldn't connect to api: ", error);
-            }
-        }
         fetchTodo()
     }, [])
 
@@ -32,42 +34,72 @@ export default function OwnTodo() {
 
         try {
             const res = await axios.post('http://localhost:3000/api/todo', newTodo)
-            if (res.data.success) {
-                setTodos(prevTodos => [...prevTodos, newTodo])
-                setInput('')
-            }
+            // if (res.data.success) {
+            //     setTodos(prevTodos => [...prevTodos, newTodo])
+            //     setInput('')
+            // }
+            setInput('')
+            fetchTodo()
 
         } catch (error) {
-            console.log("Error has occured");
-
+            console.log("Error has occured", error);
         }
 
     }
     const onDeleteHandler = (id) => {
         if (!id) return
-        setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id))
+        axios.delete('http://localhost:3000/api/todo', { data: { id: id } })
+            .then((res) => {
+                if (res.data && res.data.success) {
+                    fetchTodo()
+                }
+            })
+            .catch((error) => console.log('Error: ', error)
+            )
+        // if (!id) return
+        // setTodos(prevTodos => prevTodos.filter((todo) => todo.id !== id))
     }
-    const onEditHandler = (id, newTodo) => {
-        if (!id) return
-        setEditId(id)
-        setEditText(newTodo)
+    const onEditHandler = (newTodo) => {
+        if (!newTodo.id && !newTodo.title) return
+        setSelectedTodo(newTodo)
+        setEditId(newTodo.id)
+        setEditText(newTodo.title)
+        setOpenModal(true)
     }
     const handleSave = (id) => {
-        if (!id) return
-        setTodos(prevTodos => prevTodos.map((todo) => todo.id == id ? { ...todo, title: editText } : todo))
-        setEditId(null)
-        setEditText('')
+        if (!id || !editText.trim()) return
+
+        axios.put('http://localhost:3000/api/todo', { id: id, title: editText })
+            .then((res) => {
+                if (res.data && res.data.success) {
+                    fetchTodo()
+                    setEditId(null)
+                    setEditText('')
+                    setOpenModal(false)
+                }
+            })
+            .catch((error) => console.log("Error: ", error)
+            )
     }
-    const checkedHandler = (id) => {
-        if (!id) return
-        setTodos(prevTodos => prevTodos.map((todo) => todo.id == id ? { ...todo, isChecked: !todo.isChecked } : todo))
+    const checkedHandler = (todoItem) => {
+        if (!todoItem.id) return
+        axios.put('http://localhost:3000/api/todo',
+            { id: todoItem.id, title: todoItem.title, isChecked: !todoItem.isChecked })
+            .then((res) => {
+                if (res.data && res.data.success) {
+                    fetchTodo()
+                }
+            })
+            .catch((error) => console.log("Error: ", error)
+            )
+
     }
 
     return (
         <div
             className='h-screen flex flex-col items-center gap-2 mt-2 w-screen bg-white'>
             <h1 className='text-6xl font-bold text-center'>OwnTodo</h1>
-            <div className='flex     justify-center items-center px-1 gap-1 h-20'>
+            <div className='flex justify-center items-center px-1 gap-1 h-20'>
                 <input
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
@@ -86,7 +118,8 @@ export default function OwnTodo() {
                             <input
                                 id={todo.id}
                                 // value={todo.isChecked}
-                                onChange={() => checkedHandler(todo.id)}
+                                checked={todo.isChecked}
+                                onChange={() => checkedHandler(todo)}
                                 className='cursor-pointer'
                                 type="checkbox" />
                             <li
@@ -101,11 +134,20 @@ export default function OwnTodo() {
                                 onClick={() => onDeleteHandler(todo.id)} >Delete</button>
                             <button
                                 className='px-1 bg-blue-500 py-1 rounded cursor-pointer text-white hover:text-black'
-                                onClick={() => setOpenModal(true)} >{editId ? "Save" : "Edit"}</button>
+                                onClick={() => onEditHandler(todo)} >Edit</button>
+                            {/* onEditHandler(todo) */}
                         </div>
-                        {openModal && <ModalTodo handleSave={handleSave} editText={editText} setEditText={setEditText} items={todos} isChecked={todos.isChecked} handleChecked={checkedHandler} />}
                     </ul>
                 ))}
+
+            {openModal && <ModalTodo
+                handleSave={handleSave}
+                editText={editText}
+                setEditText={setEditText}
+                item={selectedTodo}
+                handleChecked={checkedHandler}
+                setOpenModal={setOpenModal}
+            />}
         </div>
 
 
