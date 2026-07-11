@@ -30,9 +30,9 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setUser: (state, action:PayloadAction<UserProfile>) => {
-            console.log({ action });
+            // console.log({ action });
             state.value = action.payload
-            console.log("Payload:", action.payload);
+            // console.log("Payload:", action.payload);
 
             // state.value = {
             //     firstName: "Ram",
@@ -42,6 +42,7 @@ export const userSlice = createSlice({
         },
         logout: (state) => {
             state.value = null
+            localStorage.removeItem("token")
         }
     },
 })
