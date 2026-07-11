@@ -2,12 +2,11 @@ import { Outlet } from "react-router-dom"
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-type propsType = {
-  loggedIn: boolean
-}
+// type propsType = {
+//   loggedIn: boolean
+// }
 
-function Layout({ loggedIn }: propsType) {
-
+function Layout() {
   return (
     <>
       <Navbar />
